@@ -7,6 +7,11 @@ Generative AI（生成 AI）は、ビジネスの変革に革新的な可能性�
 
 ![sc_lp.png](/imgs/sc_lp.png)
 
+このリポジトリではブラウザ拡張機能も提供しており、より便利に Generative AI を活用することができます。詳しくは[こちらのページ](/browser-extension/README.md)をご覧ください。
+
+![拡張機能](/imgs/extension/extension_demo.png)
+
+
 > **生成AIの進化に伴い、破壊的な変更を加えることが多々あります。エラーが発生した際は、まず最初にmainブランチの更新がないかご確認ください。**
 
 ## ユースケース一覧
@@ -154,11 +159,15 @@ npm run cdk:deploy
   - [SAML 認証](/docs/DEPLOY_OPTION.md#SAML-認証)
 - [モニタリング用のダッシュボードの有効化](/docs/DEPLOY_OPTION.md#モニタリング用のダッシュボードの有効化)
 - [ファイルアップロード機能の有効化](/docs/DEPLOY_OPTION.md#ファイルアップロード機能の有効化)
+- [別 AWS アカウントの Bedrock を利用したい場合](/docs/DEPLOY_OPTION.md#別-AWS-アカウントの-Bedrock-を利用したい場合)
 
 ## その他
  - [アップデート方法](/docs/UPDATE.md)
  - [ローカル開発環境構築手順](/docs/DEVELOPMENT.md)
  - [リソースの削除方法](/docs/DESTROY.md)
+ - [AWS 上で完結するデプロイ方法 (手元に環境を用意することが難しい場合)](/docs/DEPLOY_ON_AWS.md)
+ - [ネイティブアプリのように利用する方法](/docs/PWA.md)
+ - [ブラウザ拡張機能を利用する](/browser-extension/README.md)
 
 ## 参照
  - [ブログ: Generative AI Use Cases JP をカスタマイズする方法](https://aws.amazon.com/jp/blogs/news/how-to-generative-ai-use-cases-jp/)

@@ -2,7 +2,7 @@
 
 開発者用にローカル環境を構築する手順を説明します。なお、ローカル環境を構築する場合も、[AWS へのデプロイ](/README.md#デプロイ)は完了している必要があります。
 
-### Unix 系コマンドが使えるユーザー (Linux, MacOS 等)
+### Unix 系コマンドが使えるユーザー (Cloud9, Linux, MacOS 等)
 
 以下のコマンドを実行することで、必要な環境変数を CloudFormation の Output から動的に取得し、サーバーを起動します。
 なお、内部で `aws` コマンドと `jq` コマンドを利用しているので、未インストールの場合はインストールしてから実行してください。
@@ -10,6 +10,14 @@
 ```bash
 npm run web:devw
 ```
+
+> [!TIP]
+> AWSへの認証には[デフォルトのプロファイル](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-files.html#cli-configure-files-using-profiles)が利用されます。  
+> 別のプロファイルやアクセスキーを認証に使いたい場合はあらかじめ環境変数をセットしておくか、[setup-env.sh](/setup-env.sh)に追加しておくことができます。
+> ```bash
+> export AWS_PROFILE=''
+> export AWS_DEFAULT_REGION=''
+> ```
 
 ### その他のユーザー (Windows 等)
 
