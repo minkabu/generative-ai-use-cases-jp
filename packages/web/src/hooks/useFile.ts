@@ -31,14 +31,14 @@ const useFileState = create<{
     }));
 
     const mediaFormat = get().file?.name.split('.').pop() as string;
-
+    console.log('media:' + mediaFormat);
     // 署名付き URL の取得
     const signedUrlRes = await api.getSignedUrl({
       mediaFormat: mediaFormat,
     });
     const signedUrl = signedUrlRes.data;
     const fileUrl = signedUrl.split(/[?#]/)[0]; // 署名付き url からクエリパラメータを除外
-
+    console.log('fileUrl:' + fileUrl);
     // ファイルのアップロード
     await api.uploadFile(signedUrl, { file: get().file! });
 
@@ -47,12 +47,14 @@ const useFileState = create<{
       .recognizeFile({
         fileUrl: fileUrl,
       })
+      .catch((err) => {
+        console.log(err);
+      })
       .finally(() => {
         set(() => ({
           loading: false,
         }));
       });
-
     set(() => ({
       recognizedText: res.data.text,
     }));

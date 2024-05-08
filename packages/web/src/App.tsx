@@ -121,6 +121,12 @@ const items: ItemProps[] = [
     icon: <PiSpeakerHighBold />,
     display: 'tool' as const,
   },
+  {
+    label: '資料登録',
+    to: '/pdfupload',
+    icon: <PiUploadSimple />,
+    display: 'tool' as const,
+  },
   recognizeFileEnabled
     ? {
         label: 'ファイルアップロード',

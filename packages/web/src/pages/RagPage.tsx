@@ -35,6 +35,7 @@ const RagPage: React.FC = () => {
   const { content, setContent } = useRagPageState();
   const { pathname, search } = useLocation();
   const { getModelId, setModelId } = useChat(pathname);
+  console.log('pathname:' + pathname)
   const { postMessage, clear, loading, messages, isEmpty } = useRag(pathname);
   const { scrollToBottom, scrollToTop } = useScroll();
   const { modelIds: availableModels } = MODELS;

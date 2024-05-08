@@ -1,6 +1,7 @@
 import { Model } from 'generative-ai-use-cases-jp';
 
 const modelRegion = import.meta.env.VITE_APP_MODEL_REGION;
+console.log("region:" + modelRegion);
 
 // 環境変数からモデル名などを取得
 const bedrockModelIds: string[] = JSON.parse(import.meta.env.VITE_APP_MODEL_IDS)

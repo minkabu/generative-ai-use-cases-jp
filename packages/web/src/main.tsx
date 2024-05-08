@@ -24,6 +24,7 @@ import WebContent from './pages/WebContent';
 import GenerateImagePage from './pages/GenerateImagePage';
 import TranscribePage from './pages/TranscribePage';
 import AgentChatPage from './pages/AgentChatPage.tsx';
+import PdfUploadPage from './pages/PdfUploadPage.tsx';
 import FileUploadPage from './pages/FileUploadPage.tsx';
 import { MODELS } from './hooks/useModel';
 
@@ -84,6 +85,10 @@ const routes: RouteObject[] = [
   {
     path: '/transcribe',
     element: <TranscribePage />,
+  },
+  {
+    path: '/pdfupload',
+    element: <PdfUploadPage />,
   },
   multiModalEnabled
     ? {

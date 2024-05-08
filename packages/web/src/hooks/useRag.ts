@@ -110,6 +110,7 @@ const useRag = (id: string) => {
           referenceItems: items,
         })
       );
+      items.forEach(e => console.log(e))
 
       // ローディング表示を消してから通常のチャットの POST 処理を実行する
       popMessage();
