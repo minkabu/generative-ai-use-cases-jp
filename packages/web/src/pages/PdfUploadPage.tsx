@@ -6,7 +6,7 @@ import Markdown from '../components/Markdown';
 import useFile from '../hooks/useFile';
 
 const FileUploadPage: React.FC = () => {
-  const { file, loading, recognizedText, clear, setFile, recognizeFile } =
+  const { file, loading, recognizedText, clear, setFile, recognizePdf } =
     useFile();
   const ref = useRef<HTMLInputElement>(null);
 
@@ -23,8 +23,8 @@ const FileUploadPage: React.FC = () => {
 
   const onClickExec = useCallback(() => {
     if (loading) return;
-    recognizeFile();
-  }, [recognizeFile, loading]);
+    recognizePdf();
+  }, [recognizePdf, loading]);
 
   const onClickClear = useCallback(() => {
     if (ref.current) {

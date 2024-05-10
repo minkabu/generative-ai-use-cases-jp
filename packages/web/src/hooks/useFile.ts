@@ -6,6 +6,7 @@ const useFileState = create<{
   file: File | null;
   setFile: (file: File) => void;
   recognizeFile: () => Promise<void>;
+  recognizePdf: () => Promise<void>;
   recognizedText: string;
   clear: () => void;
 }>((set, get) => {
@@ -43,7 +44,7 @@ const useFileState = create<{
     await api.uploadFile(signedUrl, { file: get().file! });
 
     // ファイル認識
-    const res = await api
+    const res:any = await api
       .recognizeFile({
         fileUrl: fileUrl,
       })
@@ -60,18 +61,49 @@ const useFileState = create<{
     }));
   };
 
+  const recognizePdf = async () => {
+    set(() => ({
+      loading: true,
+      recognizedText: '',
+    }));
+
+    const mediaFormat = get().file?.name.split('.').pop() as string;
+    console.log('media:' + mediaFormat);
+    // 署名付き URL の取得
+    console.log('file:' + get().file);
+
+    // ファイル認識
+    const res:any = await api
+      .recognizePdf({
+        files: get().file!,
+        strategy: 'auto'
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        set(() => ({
+          loading: false,
+        }));
+      });
+    set(() => ({
+      recognizedText: res.data.map(e => e.text).join(' '),
+    }));
+  };
+
   return {
     file: null,
     loading: false,
     clear,
     setFile,
     recognizeFile,
+    recognizePdf,
     recognizedText: '',
   };
 });
 
 const useFile = () => {
-  const { file, loading, recognizedText, clear, setFile, recognizeFile } =
+  const { file, loading, recognizedText, clear, setFile, recognizeFile, recognizePdf} =
     useFileState();
   return {
     file,
@@ -80,6 +112,7 @@ const useFile = () => {
     clear,
     setFile,
     recognizeFile,
+    recognizePdf
   };
 };
 export default useFile;

@@ -2,6 +2,7 @@ import {
   GetFileUploadSignedUrlRequest,
   GetFileUploadSignedUrlResponse,
   RecognizeFileRequest,
+  RecognizePdfRequest,
   RecognizeFileResponse,
   UploadFileRequest,
   GetDocDownloadSignedUrlRequest,
@@ -19,6 +20,17 @@ const useFileApi = () => {
     },
     recognizeFile: (req: RecognizeFileRequest) => {
       return http.post<RecognizeFileResponse>('file/recognize', req);
+    },
+    recognizePdf: (req: RecognizePdfRequest) => {
+      const form = new FormData();
+      form.append('files', req.files);
+      form.append('strategy', req.strategy);
+      return axios({
+        method: 'POST',
+        url: 'http://ec2-54-64-175-245.ap-northeast-1.compute.amazonaws.com:8000/general/v0/general',
+        headers: { 'Content-Type': 'multipart/form-data', 'Accept': 'application/json' },
+        data: form,
+      });
     },
     uploadFile: (url: string, req: UploadFileRequest) => {
       return axios({

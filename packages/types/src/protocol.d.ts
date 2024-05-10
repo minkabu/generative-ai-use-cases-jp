@@ -164,6 +164,11 @@ export type RecognizeFileRequest = {
   fileUrl: string;
 };
 
+export type RecognizePdfRequest = {
+  files: File;
+  strategy: string;
+};
+
 export type RecognizeFileResponse = {
   text: string;
 };

@@ -18,7 +18,7 @@
   },
   "context": {
     "ragEnabled": true,
-    "kendraIndexArn": "arn:aws:kendra:ap-northeast-1:636061485504:index/f7c96d22-a9b1-4af6-b5bf-690714f98d10",
+    "kendraIndexArn": "arn:aws:kendra:ap-northeast-1:636061485504:index/859552c0-a2b9-4fdb-8d88-e4e58777b03d",
     "kendraDataSourceBucketName": "generativeaiusecasesstack-ragdatasourcebucket09187-rwmirvihttvi",
     "selfSignUpEnabled": true,
     "allowedSignUpEmailDomains": ["minkabu.co.jp", "robotfund.co.jp"],
