@@ -55,6 +55,12 @@ const items: ItemProps[] = [
     icon: <PiChatsCircle />,
     display: 'usecase' as const,
   },
+  {
+    label: 'PDF チャット',
+    to: '/pdfchat',
+    icon: <PiChatCircleText />,
+    display: 'usecase' as const,
+  },
   ragEnabled
     ? {
         label: 'RAG チャット',

@@ -80,6 +80,7 @@ const useFileState = create<{
       })
       .catch((err) => {
         console.log(err);
+        alert('PDF解析サーバーがダウンしています。')
       })
       .finally(() => {
         set(() => ({

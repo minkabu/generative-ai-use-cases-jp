@@ -11,6 +11,7 @@ import {
 import LandingPage from './pages/LandingPage';
 import Setting from './pages/Setting';
 import ChatPage from './pages/ChatPage';
+import PdfChatPage from './pages/PdfChatPage';
 import SharedChatPage from './pages/SharedChatPage';
 import SummarizePage from './pages/SummarizePage';
 import GenerateTextPage from './pages/GenerateTextPage';
@@ -49,6 +50,14 @@ const routes: RouteObject[] = [
   {
     path: '/chat',
     element: <ChatPage />,
+  },
+  {
+    path: '/pdfchat',
+    element: <PdfChatPage />,
+  },
+  {
+    path: '/pdfchat/:chatId',
+    element: <PdfChatPage />,
   },
   {
     path: '/chat/:chatId',
