@@ -301,7 +301,8 @@ const PdfChatPage: React.FC = () => {
     setIsOver(false);
     if (event.dataTransfer.files) {
       // ファイルを反映しアップロード
-      uploadFiles(Array.from(event.dataTransfer.files));
+      setFile(event.dataTransfer.files[0])
+      recognizePdf()
     }
   };
 
